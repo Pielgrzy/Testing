@@ -10,7 +10,7 @@ class Main2Test {
     @Test
     public void shouldGive60() {
         //given
-        String time1 = "9:00am-10:00pm";
+        String time1 = "9:00am-10:00am";
         //when
         int result = Main2.returnMinutes(time1);
         //then

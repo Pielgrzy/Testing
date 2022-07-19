@@ -1,41 +1,32 @@
 package Wyzwanie2;
 
+import java.util.Scanner;
+
 public class Main2 {
     /*
       input String as two time and receive difference between them.
       EXAMPLE:
       input
-      11:30am-12:30pm
+      9:00am-10:00am
       output
-      01:00
+      60
        */
     public static void main(String[] args) {
-        /*        ---PO TESTACH AKTYWOWAĆ---
         Scanner input = new Scanner(System.in);
-        System.out.println("podaj czas w 12 godzinnej formacie (h)h:mm-(h)h:mm, użyj odpowiednio am i pm");
+        System.out.println("Podaj czas w 12 godzinnej formacie (h)h:mm-(h)h:mm, użyj odpowiednio am i pm");
+        System.out.println("9:00am-10:00am");
         String time = input.nextLine();
-        */
 
-
-        String time = "1:23am-1:08am";
-        //-----TESTY-----
-        String time1 = "9:00am-10:00pm";
-        String time2 = "10:00pm-11:00am";
-        //-----TESTY-----
-
-        returnMinutes(time);
-        returnMinutes(time1);
-        returnMinutes(time2);
+        System.out.println(returnMinutes(time));
     }
 
     public static int returnMinutes(String time) {
         String[] data = time.split("-");
         String firstTime = data[0];
         String secondTime = data[1];
-        System.out.println("Rozwiązanie");
-        int timeDifference = timePart(firstTime) + partDay(firstTime) - timePart(secondTime) + partDay(secondTime);
-        if (timeDifference > 0) {
-            timeDifference = timeDifference - 24 * 60 * -1;
+        int timeDifference = timePart(secondTime) + partDay(secondTime) - timePart(firstTime) + partDay(firstTime);
+        if (timeDifference < 0) {
+            timeDifference = timeDifference + 24 * 60;
         }
         return timeDifference;
     }

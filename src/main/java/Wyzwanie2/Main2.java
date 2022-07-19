@@ -14,7 +14,7 @@ public class Main2 {
     public static void main(String[] args) {
         Scanner input = new Scanner(System.in);
         System.out.println("Podaj czas w 12 godzinnej formacie (h)h:mm-(h)h:mm, użyj odpowiednio am i pm");
-        System.out.println("9:00am-10:00am");
+        System.out.println("Przykład: 9:00am-10:00am");
         String time = input.nextLine();
 
         System.out.println(returnMinutes(time));
